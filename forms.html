@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Cup of Melody</title>
+    <link rel="stylesheet" href="forms.css">
+    <link rel="icon" type="image/x-icon" href="logofav.png">
+    <nav> 
+        <img src="logo.png" class="logo">
+        <nav class="navigation">
+            <a href="index.html">Homepage<span></span></a>
+            <a href="forms.html" class="active">Forms<span></span></a>
+    </nav>
+</head>
+
+<body>
+    <form>
+        *Insert playlist name*: <input type="text" placeholder="ex. your playlist name" id="playlist">
+    <br>
+    <br>
+        What type of genre do you listen to?: <input type="text" placeholder="ex. Hiphop, RNB, AltRock" id="genre">
+    <br>
+    <br>
+    Who are your top 3 artist: <input type="text" placeholder="ex. Laufey, Mitski, Beabadobee" id="artist">
+    <br>
+    <br>
+    What genre do you dislike: <input type="text" placeholder="ex. no one :3" id="nonogenre">
+    <br>
+    <br>
+    What artists do you dislike: <input type="text" placeholder="ex. no one :3" id="nonoartist">
+    <br>
+    <br>
+    List your 3 of your all time favorite songs: <input type="text" placeholder="ex. apple cider, promise, youre here thats the thing" id="favsongs">
+    <br>
+    <br>
+    List your 3 of your all time disliked songs: <input type="text" placeholder="ex. karma :3" id="nonosongs">
+    <br>
+    <br>
+    Continue the song lyric! ur music tastes sucks if u dont know.
+    Sasamahan ka sa Kyusi!: <input type="text" placeholder="ex. Nyanyanyanyanya" id="lyricnorm">
+    <br>
+    <br>
+    Continue the song lyric! ur music tastes sucks if u dont know. hint: it's a musical
+    "How do you write like you're running out of time": <input type="text" placeholder="ex. III WASS MEANT TO BE YOURSSS WWEE WEREE MEANT TO BE ONEEE" id="lyricnerd">
+    <br>
+    <br>
+    Continue the song lyric! ur music tastes sucks if u dont know. hint: it's for gay burnout girls
+    "Straight hair, Straight A's, Straight forward": <input type="text" placeholder="ex. BETTER CHUG THAT MOUNTAIN DEWW, ..okay ..okay.." id="lyricgay">
+    <br>
+    <br>
+    Do you have any suggestions for this survey?: <input type="text" placeholder="ex. be better." id="suggest">
+    <br>
+    <br>
+    <a href="#" id="popup-link">
+    <button type="submit" onclick="One()"> Judge my music taste!</button>
+    </a>
+    </form>
+
+    <div id="popup-window">
+        <form>
+            <br>
+            <br>
+            <h1> One more thing!</h1>
+                <p>Do you think your music taste is good? </p>
+                <input type="radio" id="button1" name="question" value="1"> <label for="button1">Yes</label><br>
+                <input type="radio" id="button2" name="question" value="2"> <label for="button2">No</label><br>
+                <p>Why do you think so?</p>
+                <input type="text" placeholder="Because I said so" id="why">
+                <a href="#" id="popup-link2" id="popup-link3">
+                <button type="submit" onclick="Two()"> Done </button>
+                </a>
+        </form>
+      </div>  
+
+      <div id="popup-window2">
+        <br>
+        <br>
+        <h1> Yes, your music taste is good! </h1>
+            <p>So you know your stuff, you don't let people talk horrible about your taste - or.. you just choose to ignore them ..and that's a good thing! </p>
+            <p> Or you were left with no choice since the alert box kept telling you to pick the 'yes' button..</p>
+            <p> Believe it or not, everyone's tastes are unique. Be yourself, be proud of your unique music taste.</p>
+            <h6> Also yes, this website lied.. we are NOT judging your music taste!</h6>
+            <img src="adorb.jpg">
+    <button id="close-button" class="closebutton">Close</button>
+  </div>  
+
+
+  
+
+    <script>
+        function One(){
+            var playlist = document.getElementById ("playlist").value
+            var playlist2 = localStorage.setItem ("playlist:", playlist)
+            var genre = document.getElementById ("genre").value
+            var genre2 = localStorage.setItem ("genre:", genre)
+            var artist = document.getElementById ("artist").value
+            var artist2 = localStorage.setItem ("artist:", artist)
+            var nonogenre = document.getElementById ("nonogenre").value
+            var nonogenre2 = localStorage.setItem ("nonogenre:", nonogenre)
+            var nonoartist = document.getElementById ("nonoartist").value
+            var nonoartist2 = localStorage.setItem ("nonoartist:", nonoartist)
+            var favsongs = document.getElementById ("favsongs").value
+            var favsongs2 = localStorage.setItem ("favsongs:", favsongs)
+            var nonosongs = document.getElementById ("nonosongs").value
+            var nonosongs2 = localStorage.setItem ("nonosongs:", nonosongs)
+            var lyricnorm = document.getElementById ("lyricnorm").value
+            var lyricnorm2 = localStorage.setItem ("lyricnorm:", lyricnorm)
+            var lyricnerd = document.getElementById ("lyricnerd").value
+            var lyricnerd2 = localStorage.setItem ("lyricnerd:", lyricnerd)
+            var lyricgay = document.getElementById ("lyricgay").value
+            var lyricgay2 = localStorage.setItem ("lyricgay:", lyricgay)
+            var suggest = document.getElementById ("suggest").value
+            var suggest2 = localStorage.setItem ("suggest:", suggest)
+
+            
+            var why = document.getElementById ("why").value
+        var why2 = localStorage.setItem ("why:"), why
+
+            
+        }
+
+            var popupLink = document.getElementById("popup-link");
+            var popupWindow = document.getElementById("popup-window");
+            var closeButton = document.getElementById("close-button");
+
+            popupLink.addEventListener("click", function(event) {
+            event.preventDefault();
+            popupWindow.style.display = "block";
+    });
+ 
+            closeButton.addEventListener("click", function() {
+            popupWindow.style.display = "none";
+     });
+
+     function Two() {
+        var button1 = document.getElementById("button1");
+        var button2 = document.getElementById("button2");
+
+     if (button1.checked) {
+        var popupLink2 = document.getElementById("popup-link2");
+            var popupWindow2 = document.getElementById("popup-window2");
+            var closeButton = document.getElementById("close-button");
+
+            popupLink2.addEventListener("click", function(event) {
+            event.preventDefault();
+            popupWindow2.style.display = "block";
+    });
+ 
+            closeButton.addEventListener("click", function() {
+            popupWindow2.style.display = "none";
+     });
+        
+     } else {
+        alert("Wrong. Your music taste is good. Go click the yes button! Try again.")
+     }
+    }
+</script>        
+    </script>
+</body>
